@@ -1,4 +1,6 @@
 # Twenty48
+[![CircleCI](https://circleci.com/gh/alyyousuf7/twenty48.svg?style=shield)](https://circleci.com/gh/alyyousuf7/twenty48)
+
 Play 2048 from CLI.
 
 ## Install
