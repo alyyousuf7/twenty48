@@ -1,5 +1,5 @@
 # Twenty48
-[![CircleCI](https://circleci.com/gh/alyyousuf7/twenty48.svg?style=shield)](https://circleci.com/gh/alyyousuf7/twenty48)
+[![CircleCI](https://circleci.com/gh/alyyousuf7/twenty48.svg?style=shield)](https://circleci.com/gh/alyyousuf7/twenty48) [![codecov](https://codecov.io/gh/alyyousuf7/twenty48/branch/master/graph/badge.svg)](https://codecov.io/gh/alyyousuf7/twenty48)
 
 Play 2048 from CLI.
 

@@ -17,3 +17,12 @@ jobs:
       - run:
           name: Build binary
           command: go build -v ./cmd/twenty48/...
+      - run:
+          name: Generate coverage report
+          command: |
+            for pkg in $(go list ./... | grep -v /vendor/); do
+              go test -race -coverprofile=../../../$pkg/coverage.txt -covermode=atomic $pkg || exit;
+            done
+      - run:
+          name: Upload coverage report to codecov
+          command: bash <(curl -s https://codecov.io/bash)
