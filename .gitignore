@@ -3,6 +3,7 @@
 *.dll
 *.so
 *.dylib
+cmd/twenty48/twenty48
 
 # Test binary, build with `go test -c`
 *.test
