@@ -13,16 +13,13 @@ jobs:
       - checkout
       - run:
           name: Run unit tests
-          command: go test -v ./...
+          command: make test
       - run:
           name: Build binary
-          command: go build -v ./cmd/twenty48/...
+          command: make binary
       - run:
           name: Generate coverage report
-          command: |
-            for pkg in $(go list ./... | grep -v /vendor/); do
-              go test -race -coverprofile=../../../$pkg/coverage.txt -covermode=atomic $pkg || exit;
-            done
+          command: make coverage
       - run:
           name: Upload coverage report to codecov
           command: bash <(curl -s https://codecov.io/bash)
