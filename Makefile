@@ -2,10 +2,10 @@
 
 PACKAGES := $(shell go list ./... | grep -v /vendor/)
 
-./bin/twenty48:
-	@go build -o ./bin/twenty48 ./cmd/twenty48/...
+bin/twenty48: *.go cmd/twenty48/*.go
+	@go build -o bin/twenty48 ./cmd/twenty48/...
 
-binary: ./bin/twenty48
+binary: bin/twenty48
 
 clean:
 	@rm -rf ./bin coverage.txt || true
