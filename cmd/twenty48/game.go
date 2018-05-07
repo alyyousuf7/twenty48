@@ -58,7 +58,7 @@ func drawBoard(board *twenty48.Board, file *os.File) {
 		for x := 0; x < w; x++ {
 			v := board.At(x, y).Value()
 
-			fg := termbox.ColorDefault
+			fg := termbox.ColorWhite
 			bg := termbox.ColorDefault
 			switch v {
 			case 2:
