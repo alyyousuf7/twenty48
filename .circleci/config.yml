@@ -1,25 +1,62 @@
-# Golang CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-go/ for more details
 version: 2
 jobs:
   build:
     docker:
       - image: circleci/golang:1.9
-
     working_directory: /go/src/github.com/alyyousuf7/twenty48
+    steps:
+      - checkout
+      - run:
+          name: Build binary
+          command: make binary
 
+  test:
+    docker:
+      - image: circleci/golang:1.9
+    working_directory: /go/src/github.com/alyyousuf7/twenty48
     steps:
       - checkout
       - run:
           name: Run unit tests
           command: make test
-      - run:
-          name: Build binary
-          command: make binary
+
+  coverage:
+    docker:
+      - image: circleci/golang:1.9
+    working_directory: /go/src/github.com/alyyousuf7/twenty48
+    steps:
+      - checkout
       - run:
           name: Generate coverage report
           command: make coverage
       - run:
           name: Upload coverage report to codecov
           command: bash <(curl -s https://codecov.io/bash)
+
+  release:
+    docker:
+      - image: circleci/golang:1.9
+    working_directory: /go/src/github.com/alyyousuf7/twenty48
+    steps:
+      - checkout
+      - run:
+          name: Release with goreleaser
+          command: curl -sSL git.io/goreleaser | bash
+
+workflows:
+  version: 2
+  build-test-and-release:
+    jobs:
+      - build
+      - test
+      - coverage:
+          requires:
+            - test
+      - release:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/ # vx.x.x
