@@ -24,4 +24,4 @@ archive:
 # Do not publish the release yet
 release:
   draft: true
-  name_template: "{{.ProjectName}}-v{{.Version}}"
+  name_template: "v{{.Version}}"
