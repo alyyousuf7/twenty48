@@ -48,7 +48,10 @@ workflows:
   build-test-and-release:
     jobs:
       - build
-      - test
+      - test:
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
       - coverage:
           requires:
             - test
@@ -59,4 +62,4 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/ # vx.x.x
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
