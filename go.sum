@@ -1,0 +1,4 @@
+github.com/mattn/go-runewidth v0.0.3 h1:a+kO+98RDGEfo6asOGMmpodZq4FNtnGP54yps8BzLR4=
+github.com/mattn/go-runewidth v0.0.3/go.mod h1:LwmH8dsx7+W8Uxz3IHJYH5QSwggIsqBzpuz5H//U1FU=
+github.com/nsf/termbox-go v0.0.0-20180502020344-5a49b8216054 h1:YuhENmxlNORIdPtu9htzty3P4NwoWFjWMG6H+V+2LVM=
+github.com/nsf/termbox-go v0.0.0-20180502020344-5a49b8216054/go.mod h1:IuKpRQcYE1Tfu+oAQqaLisqDeXgjyyltCfsaoYN18NQ=
