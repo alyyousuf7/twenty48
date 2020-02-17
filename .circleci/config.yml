@@ -2,8 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/golang:1.9
-    working_directory: /go/src/github.com/alyyousuf7/twenty48
+      - image: circleci/golang:1.12
     steps:
       - checkout
       - run:
@@ -12,8 +11,7 @@ jobs:
 
   test:
     docker:
-      - image: circleci/golang:1.9
-    working_directory: /go/src/github.com/alyyousuf7/twenty48
+      - image: circleci/golang:1.12
     steps:
       - checkout
       - run:
@@ -22,8 +20,7 @@ jobs:
 
   coverage:
     docker:
-      - image: circleci/golang:1.9
-    working_directory: /go/src/github.com/alyyousuf7/twenty48
+      - image: circleci/golang:1.12
     steps:
       - checkout
       - run:
@@ -35,8 +32,7 @@ jobs:
 
   release:
     docker:
-      - image: circleci/golang:1.9
-    working_directory: /go/src/github.com/alyyousuf7/twenty48
+      - image: circleci/golang:1.12
     steps:
       - checkout
       - run:

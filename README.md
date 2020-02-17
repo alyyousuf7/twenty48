@@ -29,9 +29,9 @@ $ make binary # build the executable in bin/
 Or using Docker:
 ```bash
 $ make shell  # jump into a container
-root@container:/go/src/github.com/alyyousuf7/twenty48# make test
-root@container:/go/src/github.com/alyyousuf7/twenty48# make binary
-root@container:/go/src/github.com/alyyousuf7/twenty48# exit
+root@container:/twenty48# make test
+root@container:/twenty48# make binary
+root@container:/twenty48# exit
 ```
 
 The Docker container mounts a volume to `bin/` to copy executable to host machine.
